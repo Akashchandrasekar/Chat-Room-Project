@@ -4,8 +4,10 @@ import { getAllRooms, createRoom, deleteRoom } from '../Controllers/roomControll
 
 const router = express.Router();
 
-router.get('/', authenticateToken, getAllRooms);
+
 router.post('/', authenticateToken, createRoom);
+router.get("/rooms", authenticateToken, getAllRooms);
+
 router.delete('/:roomId', authenticateToken, deleteRoom);
 
 export default router;
